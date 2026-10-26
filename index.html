@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVOZ DJ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">♫ OVOZ<span>DJ</span></div>
+      <div class="status"><i id="statusDot"></i><span id="status">Tizim tayyor</span></div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">OVOZING — RITMING</p>
+      <h1>Gapir. <span>Musiqa</span><br>javob bersin.</h1>
+      <p>Ovozingni tingla. Ritmni his qil. O‘z musiqangni yarat!</p>
+    </section>
+
+    <main>
+      <section class="panel">
+        <div class="panel-title">
+          <div><small>01 / JONLI TAHLIL</small><h2>Mikrofon studiyasi</h2></div>
+          <span class="badge" id="micBadge">KUTISHDA</span>
+        </div>
+
+        <div class="visual">
+          <canvas id="wave"></canvas>
+          <div class="orb" id="orb">♫</div>
+          <span class="visual-label">OVOZ TO‘LQINI</span>
+        </div>
+
+        <div class="stats">
+          <div><small>OVOZ KUCHI</small><strong id="volume">0%</strong><div class="bar"><i id="volumeBar"></i></div></div>
+          <div><small>FAOLLIK</small><strong id="speed">—</strong><div class="bar"><i id="speedBar"></i></div></div>
+          <div><small>MUSIQA RITMI</small><strong id="bpm">72 <small>BPM</small></strong><div class="bar"><i id="bpmBar"></i></div></div>
+        </div>
+
+        <div class="buttons">
+          <button class="primary" id="startMic">🎙 Mikrofonni yoqish</button>
+          <button class="secondary" id="stopMic" disabled>To‘xtatish</button>
+        </div>
+        <p class="hint">Mikrofonga ruxsat berishni unutmang.</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <div><small>02 / MUSIQA DVIGATELI</small><h2>Kayfiyatni tanla</h2></div>
+          <span class="music-note">♫</span>
+        </div>
+
+        <div class="moods">
+          <button class="mood selected" data-mood="auto">✦ <b>Avto</b><small>Ovozga mos</small></button>
+          <button class="mood" data-mood="calm">☾ <b>Mayin</b><small>Sokin kuy</small></button>
+          <button class="mood" data-mood="energy">ϟ <b>Jo‘shqin</b><small>Kuchli ritm</small></button>
+          <button class="mood" data-mood="dream">✧ <b>Orzuviy</b><small>Elektron kuy</small></button>
+        </div>
+
+        <div class="now-playing">
+          <div class="disc">♫</div>
+          <div><small>HOZIRGI MUSIQA</small><strong id="moodName">Moslashuv rejimi</strong><p id="musicHint">Musiqani boshlashga tayyor</p></div>
+        </div>
+
+        <label class="slider-label" for="musicVolume">Musiqa balandligi <span id="volumeLabel">35%</span></label>
+        <input id="musicVolume" type="range" min="0" max="80" value="35">
+
+        <div class="buttons">
+          <button class="primary" id="startMusic">▶ Musiqani boshlash</button>
+          <button class="secondary" id="stopMusic" disabled>■ To‘xtatish</button>
+        </div>
+        <p class="hint">Musiqa brauzerning o‘zida yaratiladi.</p>
+      </section>
+
+      <section class="panel recording">
+        <div class="panel-title">
+          <div><small>03 / OVOZ LABORATORIYASI</small><h2>Ovozingni yozib ol</h2></div>
+          <span class="music-note">●</span>
+        </div>
+
+        <div class="record-status">
+          <div class="record-circle" id="recordCircle">●</div>
+          <div><strong id="recordState">Yozuvga tayyor</strong><p id="timer">00:00</p></div>
+        </div>
+
+        <div class="buttons record-buttons">
+          <button class="primary" id="recordBtn">● Yozishni boshlash</button>
+          <button class="secondary" id="finishRecord" disabled>Tugatish</button>
+          <button class="secondary" id="playRecord" disabled>▶ Tinglash</button>
+          <button class="secondary" id="downloadRecord" disabled>⬇ Saqlash</button>
+        </div>
+
+        <audio id="audioPlayer" controls hidden></audio>
+
+        <div class="results" id="results" hidden>
+          <div><small>O‘RTACHA KUCH</small><strong id="avg">—</strong></div>
+          <div><small>ENG BALAND KUCH</small><strong id="peak">—</strong></div>
+          <div><small>TAHLIL</small><strong id="analysis">—</strong></div>
+        </div>
+        <p class="hint">Yozuvni tinglashing va qurilmangga saqlashing mumkin.</p>
+      </section>
+    </main>
+
+    <aside>
+      <strong>ⓘ Eslatma</strong>
+      <p>Dastur ovoz balandligi va uning o‘zgarishlarini o‘lchaydi. Bu hissiyotlarni aniq aniqlash degani emas. Hozircha tayyor qo‘shiq emas, balki jonli sintezator musiqasi yaratiladi.</p>
+    </aside>
+
+    <footer>OVOZ<span>DJ</span> <small>QORA. OLTIN. OVOZ.</small></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
